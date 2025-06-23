@@ -31,3 +31,20 @@ class Solution(object):
         if x < 0:
             return False 
         return str(x) == str(x)[::-1]  
+
+# Another solution that can be used
+class Solution(object):
+    def isPalindrome(self, x):
+
+        if  x < 0 :
+            return False
+
+        sums = 0 
+        copy = x
+
+        while copy > 0 :
+            last = copy % 10 
+            sums = sums * 10 + last 
+            copy = copy // 10
+
+        return sums == x
