@@ -32,11 +32,21 @@ pos is -1 or a valid index in the linked-list.
 #         self.next = None
 
 class Solution(object):
-    def hasCycle(self, head):
+  def hasCycle(self, head):
         """
         :type head: ListNode
         :rtype: bool
         """
+        # OPTIMAL
+        slow = fast = head 
+        while fast != None and fast.next != None: 
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+        return False
+
+        # BRUTE FORCE
         if head == None :
             return False 
 
@@ -52,5 +62,4 @@ class Solution(object):
                 return True
 
         return False
-
-        # NOT MUCH OF AN OPTIMAL SOLUTION
+       
