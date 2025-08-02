@@ -59,10 +59,11 @@ class Solution(object):
             
         if len(copy) % 2 != 0:
             middle = copy[len(copy)//2]
-            return middle
+        
         else:
             left = copy[(len(copy) // 2) - 1]
             right = copy[len(copy)//2]
             middle = (left+right) / 2.0
-            return middle
-        
+
+        return middle
+
